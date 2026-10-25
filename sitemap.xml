@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO(spencer): replace DOMAIN with the live domain -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://DOMAIN/</loc>
+  </url>
+  <url>
+    <loc>https://DOMAIN/privacy.html</loc>
+  </url>
+</urlset>
