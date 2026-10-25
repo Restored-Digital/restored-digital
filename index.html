@@ -12,10 +12,10 @@
       content="I set up your domain, business email, website, and Google listing in your own name, and keep it running if you want me to. Restored Digital, Yakima Valley, WA."
     />
     <meta name="theme-color" content="#1a2744" />
-    <!-- TODO(spencer): add <link rel="canonical"> once the domain is live -->
+    <link rel="canonical" href="https://www.restoreddigital.com/" />
 
     <!-- Open Graph / Twitter -->
-    <!-- TODO(spencer): og:image and og:url need absolute URLs once the domain is live -->
+    <meta property="og:url" content="https://www.restoreddigital.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Restored Digital" />
     <meta
@@ -26,7 +26,7 @@
       property="og:description"
       content="I set up your domain, business email, website, and Google listing in your own name, and keep it running if you want me to."
     />
-    <meta property="og:image" content="images/og.png" />
+    <meta property="og:image" content="https://www.restoreddigital.com/images/og.png" />
     <meta property="og:image:alt" content="Restored Digital logo" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -37,7 +37,7 @@
       name="twitter:description"
       content="I set up your domain, business email, website, and Google listing in your own name, and keep it running if you want me to."
     />
-    <meta name="twitter:image" content="images/og.png" />
+    <meta name="twitter:image" content="https://www.restoreddigital.com/images/og.png" />
 
     <!-- Icons -->
     <link rel="icon" href="images/favicon.ico" sizes="48x48" />
@@ -62,12 +62,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- TODO(spencer): add "url" to this JSON-LD once the domain is live -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Restored Digital",
+        "url": "https://www.restoreddigital.com/",
         "email": "hello@restoreddigital.com",
         "areaServed": {
           "@type": "AdministrativeArea",
@@ -237,45 +237,12 @@
         </div>
       </section>
 
-      <!-- Proof of work -->
-      <section id="proof">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2>Something I built</h2>
-            </div>
-          </div>
-          <div class="row justify-content-center mt-5">
-            <div class="col-md-8 col-lg-5">
-              <div class="proof-card">
-                <div class="proof-badge">Live</div>
-                <h3>MYIP411</h3>
-                <!-- TODO(spencer): confirm platform wording. The old copy said "Built on Cloudflare Workers" but the link is a pages.dev address -->
-                <p>
-                  A free tool I built that shows you your public IP address,
-                  with a clean, simple interface.
-                </p>
-                <a
-                  href="https://myip411.pages.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="proof-link"
-                  >View the tool <span aria-hidden="true">→</span
-                  ><span class="visually-hidden">(opens in a new tab)</span></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- About -->
       <section id="about">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
               <h2>Local and accountable</h2>
-              <!-- TODO(spencer): photo goes here when images/spencer.jpg exists: <img class="about-photo" src="images/spencer.jpg" alt="Spencer Dorsey" /> -->
               <p>
                 I'm Spencer Dorsey, a licensed CPA and full stack developer
                 based in Yakima, Washington. I own and run Restored Digital,
@@ -487,7 +454,6 @@
             <p class="footer-heading">Navigation</p>
             <ul class="footer-list">
               <li><a href="#services">Services</a></li>
-              <li><a href="#proof">My work</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="privacy.html">Privacy</a></li>
