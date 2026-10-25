@@ -5,7 +5,6 @@
    =========================== */
 
 :root {
-    /* TODO(spencer): palette hex values; these match the original colors */
     --navy: #1a2744;
     --gold: #d4a017;
     --gold-hover: #e8c547;
@@ -306,29 +305,6 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 16px;
 }
 
-#contact .form-label {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    color: var(--navy);
-    font-size: 0.9rem;
-}
-
-#contact .form-control {
-    border: 1px solid var(--field-border);
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    color: var(--text);
-}
-
-#contact .form-control:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.15);
-}
-
-#contact textarea {
-    resize: vertical;
-}
 
 #contact .form-note {
     font-size: 0.85rem;
@@ -340,8 +316,19 @@ h1, h2, h3, h4, h5 {
     color: var(--blue);
 }
 
-#contact .form-status {
-    margin-bottom: 24px;
+.contact-frame {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: 1107px;
+    margin: 0 auto;
+    border: 0;
+}
+
+@media (max-width: 575.98px) {
+    .contact-frame {
+        height: 1350px;
+    }
 }
 /* --- Footer --- */
 #footer {

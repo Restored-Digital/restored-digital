@@ -200,8 +200,11 @@
                 <ul class="service-list">
                   <li>Uptime and security monitoring</li>
                   <li>Domain, DNS, and SSL kept current</li>
-                  <!-- TODO(spencer): monthly cap on small content edits -->
-                  <li>Small content edits</li>
+                  <li>
+                    Up to two small edits per month (text, hours, photo swaps,
+                    about fifteen minutes each). Unused edits don't roll over,
+                    and larger changes are quoted separately.
+                  </li>
                   <li>A short check-in each quarter</li>
                 </ul>
               </div>
@@ -228,10 +231,10 @@
               software or complex IT systems, I'll tell you plainly and point
               you to someone who does it.
             </p>
-            <!-- TODO(spencer): add prices later -->
             <p>
-              <strong>Pricing.</strong> I quote after a short conversation, in
-              writing, before any work starts.
+              <strong>Pricing.</strong> I quote in writing after a short
+              conversation, before any work starts. Setup is a flat one-time
+              fee. Monthly care is optional and month to month.
             </p>
           </div>
         </div>
@@ -306,132 +309,24 @@
           </div>
           <div class="row justify-content-center mt-5">
             <div class="col-lg-7">
-              <div class="form-status" aria-live="polite">
-                <div
-                  class="alert alert-success"
-                  id="formSuccess"
-                  role="status"
-                  hidden
-                >
-                  Thanks, your message was sent. I'll reply by email, usually
-                  within one business day.
-                </div>
-                <div
-                  class="alert alert-danger"
-                  id="formError"
-                  role="alert"
-                  hidden
-                >
-                  Your message didn't go through. Please try again, or email me
-                  at
-                  <a href="mailto:hello@restoreddigital.com"
-                    >hello@restoreddigital.com</a
-                  >.
-                </div>
-              </div>
-              <!-- TODO(spencer): set data-endpoint to the form handler URL once the route is chosen (Google Form or a form service); see js/contact.js -->
-              <form id="contact-form" data-endpoint="" method="post" novalidate>
-                <div class="mb-3">
-                  <label for="contactName" class="form-label">Your name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="contactName"
-                    name="name"
-                    placeholder="Full name"
-                    autocomplete="name"
-                    required
-                  />
-                  <div class="invalid-feedback">Please enter your name.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="contactBusiness" class="form-label"
-                    >Business name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="contactBusiness"
-                    name="business"
-                    placeholder="Your business name"
-                    autocomplete="organization"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please enter your business name.
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="contactEmail" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="contactEmail"
-                    name="email"
-                    placeholder="you@yourbusiness.com"
-                    autocomplete="email"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please enter a valid email address.
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="contactPhone" class="form-label"
-                    >Phone <span class="text-muted">(optional)</span></label
-                  >
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="contactPhone"
-                    name="phone"
-                    placeholder="509-555-1234"
-                    autocomplete="tel"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="contactWebsite" class="form-label"
-                    >Current website
-                    <span class="text-muted">(optional)</span></label
-                  >
-                  <input
-                    type="url"
-                    class="form-control"
-                    id="contactWebsite"
-                    name="website"
-                    placeholder="https://yourwebsite.com"
-                    autocomplete="url"
-                  />
-                  <div class="invalid-feedback">
-                    Please enter a full web address, starting with https://
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <label for="contactMessage" class="form-label"
-                    >What are you dealing with?</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="contactMessage"
-                    name="message"
-                    rows="5"
-                    placeholder="Tell me what's going on. The more detail the better."
-                    required
-                  ></textarea>
-                  <div class="invalid-feedback">
-                    Please tell me a little about what's going on.
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-gold px-5">
-                    Send message
-                  </button>
-                  <p class="form-note">
-                    I use what you send only to reply.
-                    <a href="privacy.html">Read the privacy policy</a>.
-                  </p>
-                </div>
-              </form>
+              <iframe
+                class="contact-frame"
+                title="Contact form"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSd30V_0GPuKH4bUSAOWCxwhaYH5y-z_NHsODeTNZxQijxTPCA/viewform?embedded=true"
+                width="640"
+                height="1107"
+                loading="lazy"
+              >
+                Loading…
+              </iframe>
+              <p class="form-note text-center">
+                I use what you send only to reply.
+                <a href="privacy.html">Read the privacy policy</a>. If the form
+                doesn't load, email me at
+                <a href="mailto:hello@restoreddigital.com"
+                  >hello@restoreddigital.com</a
+                >.
+              </p>
             </div>
           </div>
         </div>
@@ -500,6 +395,5 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="js/contact.js"></script>
   </body>
 </html>
