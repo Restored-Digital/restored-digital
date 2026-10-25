@@ -1,5 +1,5 @@
 /* ===========================
-   Restored Digital — Custom Styles
+   Restored Digital - Custom Styles
    Colors: Navy, Blue, Gold, Warm Gray, Off-white
    Fonts: Raleway (headlines), Inter (body)
    =========================== */
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5 {
     margin: 0;
     font-size: 0.9rem;
     color: var(--gray);
-    margin-top: auto;
+    margin-top: 0;
 }
 
 .service-list li {
