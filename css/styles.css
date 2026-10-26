@@ -1,14 +1,30 @@
 /* ===========================
-   Restore Digital — Custom Styles
+   Restored Digital - Custom Styles
    Colors: Navy, Blue, Gold, Warm Gray, Off-white
    Fonts: Raleway (headlines), Inter (body)
    =========================== */
+
+:root {
+    --navy: #1a2744;
+    --gold: #d4a017;
+    --gold-hover: #e8c547;
+    --gold-text: #8a6508; /* gold for text on light backgrounds, AA contrast */
+    --blue: #2c5282;
+    --gray: #6b7280;
+    --gray-on-dark: #9ca3af; /* gray for text on navy, AA contrast */
+    --text: #333333;
+    --off-white: #f8f9fa;
+    --border: #e2e8f0;
+    --field-border: #8a94a6; /* form field edge, 3:1 against white */
+    --slate-light: #cbd5e0;
+    --footer-line: #2d3748;
+}
 
 /* --- Base --- */
 
 body {
     font-family: "Inter", sans-serif;
-    color: #333333;
+    color: var(--text);
 }
 
 h1, h2, h3, h4, h5 {
@@ -22,22 +38,24 @@ h1, h2, h3, h4, h5 {
 /* --- Navbar --- */
 
 #navbar {
-    background-color: #1a2744;
+    background-color: var(--navy);
     padding: 16px 0;
 }
 
 .navbar-brand {
-    font-family: "Raleway", sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
-    color: #d4a017 !important;
-    letter-spacing: 0.5px;
+    padding: 0;
+}
+
+.navbar-brand img {
+    display: block;
+    height: 56px;
+    width: auto;
 }
 
 /* --- Hero --- */
 
 #hero {
-    background-color: #1a2744;
+    background-color: var(--navy);
     color: white;
     padding: 100px 0;
 }
@@ -48,7 +66,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #d4a017;
+    color: var(--gold);
     margin-bottom: 16px;
 }
 
@@ -63,14 +81,14 @@ h1, h2, h3, h4, h5 {
 #hero .hero-sub {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #cbd5e0;
+    color: var(--slate-light);
     margin-bottom: 40px;
     max-width: 600px;
 }
 
 .btn-gold {
-    background-color: #d4a017;
-    color: #1a2744;
+    background-color: var(--gold);
+    color: var(--navy);
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     padding: 12px 28px;
@@ -79,50 +97,53 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-gold:hover {
-    background-color: #e8c547;
-    color: #1a2744;
+    background-color: var(--gold-hover);
+    color: var(--navy);
 }
 
 /* --- Problem --- */
 
 #problem {
-    background-color: #f8f9fa;
+    background-color: var(--off-white);
     padding: 80px 0;
 }
 
 #problem h2 {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1a2744;
+    color: var(--navy);
     margin-bottom: 16px;
 }
 
 .section-sub {
     font-size: 1.05rem;
-    color: #6b7280;
+    color: var(--gray);
     line-height: 1.7;
     margin-bottom: 0;
 }
 
-.problem-card {
-    background: white;
-    border-left: 4px solid #d4a017;
-    padding: 28px;
-    border-radius: 4px;
-    height: 100%;
+.problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 24px 0;
 }
 
-.problem-card h5 {
+.problem-list li {
+    background: white;
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.problem-close {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    color: #1a2744;
-    margin-bottom: 12px;
-}
-
-.problem-card p {
-    color: #6b7280;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    color: var(--navy);
     margin-bottom: 0;
 }
 
@@ -135,13 +156,13 @@ h1, h2, h3, h4, h5 {
 #services h2 {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1a2744;
+    color: var(--navy);
     margin-bottom: 16px;
 }
 
 .service-card {
-    background: #f8f9fa;
-    border: 1px solid #e2e8f0;
+    background: var(--off-white);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 36px 28px;
     height: 100%;
@@ -149,42 +170,31 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
 }
 
-.service-card-featured {
-    background: #f8f9fa;
-    border: 3px solid;
-    border-color: #d4a017;
-}
-
-
-.service-tier {
+.service-card h3 {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #d4a017;
-    margin-bottom: 12px;
-}
-
-.service-tier-featured {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #d4a017;
-    margin-bottom: 12px;
-}
-
-.service-card h4 {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    color: #1a2744;
+    font-size: 1.5rem;
+    color: var(--navy);
     margin-bottom: 16px;
 }
 
+.service-statements {
+    max-width: 760px;
+    margin: 48px auto 0 auto;
+}
+
+.service-statements p {
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.service-statements strong {
+    color: var(--navy);
+}
+
 .service-card p {
-    color: #6b7280;
+    color: var(--gray);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -195,95 +205,17 @@ h1, h2, h3, h4, h5 {
     padding: 0;
     margin: 0;
     font-size: 0.9rem;
-    color: #6b7280;
-    margin-top: auto;
+    color: var(--gray);
+    margin-top: 0;
 }
 
 .service-list li {
     padding: 6px 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--border);
 }
 
 .service-list li:last-child {
     border-bottom: none;
-}
-/* --- Proof of Work --- */
-#proof {
-    background-color: #f8f9fa;
-    padding: 80px 0;
-}
-
-#proof h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1a2744;
-    margin-bottom: 16px;
-}
-
-.proof-card {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 32px 28px;
-    height: 100%;
-}
-
-.proof-card-coming {
-    opacity: 0.6;
-}
-
-.proof-badge {
-    display: inline-block;
-    background-color: #d4a017;
-    color: #1a2744;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-}
-
-.proof-badge-coming {
-    display: inline-block;
-    background-color: #e2e8f0;
-    color: #6b7280;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-}
-
-.proof-card h5 {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    color: #1a2744;
-    margin-bottom: 12px;
-}
-
-.proof-card p {
-    color: #6b7280;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.proof-link {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    color: #2c5282;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.proof-link:hover {
-    color: #d4a017;
 }
 /* --- About --- */
 #about {
@@ -294,12 +226,12 @@ h1, h2, h3, h4, h5 {
 #about h2 {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1a2744;
+    color: var(--navy);
     margin-bottom: 24px;
 }
 
 #about p {
-    color: #6b7280;
+    color: var(--gray);
     line-height: 1.8;
     margin-bottom: 16px;
 }
@@ -307,29 +239,29 @@ h1, h2, h3, h4, h5 {
 .stat-number {
     font-family: "Raleway", sans-serif;
     font-weight: 800;
-    font-size: 1.4rem;
-    color: #1a2744;
+    font-size: 1.1rem;
+    color: var(--navy);
 }
 
-.stat-label {
-    font-size: 0.8rem;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
+.about-photo {
+    display: block;
+    max-width: 220px;
+    border-radius: 8px;
+    margin-bottom: 24px;
 }
 
 .about-card {
-    background: #f8f9fa;
-    border-left: 4px solid #d4a017;
+    background: var(--off-white);
+    border-left: 4px solid var(--gold);
     border-radius: 4px;
     padding: 36px;
 }
 
-.about-card h5 {
+.about-card h3 {
     font-family: "Raleway", sans-serif;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #1a2744;
+    color: var(--navy);
     margin-bottom: 20px;
 }
 
@@ -341,8 +273,8 @@ h1, h2, h3, h4, h5 {
 
 .about-list li {
     padding: 10px 0;
-    border-bottom: 1px solid #e2e8f0;
-    color: #6b7280;
+    border-bottom: 1px solid var(--border);
+    color: var(--gray);
     font-size: 0.95rem;
     line-height: 1.5;
     padding-left: 20px;
@@ -355,62 +287,65 @@ h1, h2, h3, h4, h5 {
 
 .about-list li::before {
     content: "→";
-    color: #d4a017;
+    color: var(--gold-text);
     font-weight: 700;
     position: absolute;
     left: 0;
 }
 /* --- Contact --- */
 #contact {
-    background-color: #f8f9fa;
+    background-color: var(--off-white);
     padding: 80px 0;
 }
 
 #contact h2 {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1a2744;
+    color: var(--navy);
     margin-bottom: 16px;
 }
 
-#contact .form-label {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    color: #1a2744;
-    font-size: 0.9rem;
+
+#contact .form-note {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 16px 0 0 0;
 }
 
-#contact .form-control {
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    color: #333333;
+#contact .form-note a {
+    color: var(--blue);
 }
 
-#contact .form-control:focus {
-    border-color: #2c5282;
-    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.15);
+.contact-frame {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: 1107px;
+    margin: 0 auto;
+    border: 0;
 }
 
-#contact textarea {
-    resize: vertical;
+@media (max-width: 575.98px) {
+    .contact-frame {
+        height: 1350px;
+    }
 }
 /* --- Footer --- */
 #footer {
-    background-color: #1a2744;
-    color: #cbd5e0;
+    background-color: var(--navy);
+    color: var(--slate-light);
     padding: 60px 0 0 0;
 }
 
-#footer h5 {
+.footer-brand {
     font-family: "Raleway", sans-serif;
     font-weight: 800;
-    color: #d4a017;
+    font-size: 1.25rem;
+    color: var(--gold);
     margin-bottom: 16px;
 }
 
-#footer h6 {
+.footer-heading {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     color: white;
@@ -421,13 +356,13 @@ h1, h2, h3, h4, h5 {
 }
 
 #footer p {
-    color: #cbd5e0;
+    color: var(--slate-light);
     font-size: 0.9rem;
     line-height: 1.7;
 }
 
 .footer-legal {
-    color: #6b7280 !important;
+    color: var(--gray-on-dark) !important;
     font-size: 0.8rem !important;
     margin-top: 8px;
 }
@@ -441,33 +376,101 @@ h1, h2, h3, h4, h5 {
 .footer-list li {
     padding: 5px 0;
     font-size: 0.9rem;
-    color: #cbd5e0;
+    color: var(--slate-light);
 }
 
 .footer-list a {
-    color: #cbd5e0;
+    color: var(--slate-light);
     text-decoration: none;
 }
 
 .footer-list a:hover {
-    color: #d4a017;
+    color: var(--gold);
 }
 
 .footer-bottom {
-    border-top: 1px solid #2d3748;
+    border-top: 1px solid var(--footer-line);
     margin-top: 40px;
     padding: 20px 0;
 }
 
 .footer-bottom p {
     font-size: 0.8rem;
-    color: #6b7280;
+    color: var(--gray-on-dark);
     margin: 0;
 }
 
 .footer-disclaimer {
     font-size: 0.75rem;
-    color: #6b7280;
+    color: var(--gray-on-dark);
     margin-top: 4px;
 }
+/* --- Privacy page --- */
+#privacy {
+    background-color: white;
+    padding: 80px 0;
+}
+
+#privacy h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+#privacy h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 40px 0 12px 0;
+}
+
+#privacy p,
+#privacy li {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+#privacy .privacy-date {
+    color: var(--gray);
+    margin-bottom: 0;
+}
+
+#privacy a {
+    color: var(--blue);
+}
+
+/* --- Accessibility --- */
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 2000;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.navbar-toggler:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
+#navbar a:focus-visible,
+#navbar button:focus-visible,
+#hero a:focus-visible,
+#footer a:focus-visible {
+    outline-color: var(--gold);
+}
+
 /* --- Utilities --- */
