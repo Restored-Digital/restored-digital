@@ -1,0 +1,15 @@
+{
+  "asOf": "2026-11-17",
+  "currency": "USD",
+  "salesTaxNote": "plus sales tax where required",
+  "tiers": [
+    {"id": "starter", "name": "Starter", "price": 350, "commitPrice": 299, "discount": 51, "revisionRounds": 1, "deliveryBusinessDays": 5, "inPerson": false, "pages": "1", "summary": "One page, built from our template with content you provide"},
+    {"id": "standard", "name": "Standard", "price": 900, "commitPrice": 649, "discount": 251, "revisionRounds": 2, "deliveryBusinessDays": 10, "inPerson": true, "pages": "3 to 5", "summary": "3 to 5 pages (for example Home, About, Services, Contact)"},
+    {"id": "established", "name": "Established", "price": 1350, "commitPrice": 899, "discount": 451, "revisionRounds": 2, "deliveryBusinessDays": 15, "inPerson": true, "pages": "5 to 8", "copywriting": true, "summary": "5 to 8 pages, with the words written for you for each page"}
+  ],
+  "care": {"monthly": 75, "commitMonths": 12, "editMinutesPerMonth": 30, "rollover": false, "outageResponseBusinessDays": 1, "requestResponseBusinessDays": 3},
+  "addOnRatePerHour": 100,
+  "deposit": {"percent": 50, "refundableUntilWorkStarts": true},
+  "thirdParty": {"workspacePerUserMonthly": "about $7 to $8.40", "domainComYearly": "about $11"},
+  "contactEmail": "hello@restoreddigital.com"
+}
