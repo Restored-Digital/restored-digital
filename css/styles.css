@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5 {
 
 .about-photo {
     display: block;
-    max-width: 220px;
+    max-width: 320px;
     border-radius: 8px;
     margin-bottom: 24px;
 }
@@ -438,6 +438,131 @@ h1, h2, h3, h4, h5 {
 
 #privacy a {
     color: var(--blue);
+}
+
+/* --- Pricing page --- */
+#hero.page-hero {
+    padding: 72px 0;
+}
+
+.price-section {
+    background-color: white;
+    padding: 72px 0;
+}
+
+.price-section.alt {
+    background-color: var(--off-white);
+}
+
+.price-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.price-section p,
+.price-section li {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.table-responsive {
+    margin-bottom: 16px;
+}
+
+.price-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    background: white;
+    font-size: 1rem;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    vertical-align: top;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.price-table thead th {
+    background: var(--navy);
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+.price-table tbody th {
+    background: var(--off-white);
+    color: var(--navy);
+    font-weight: 600;
+    width: 24%;
+}
+
+.price-figure {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.price-note {
+    margin-bottom: 8px;
+}
+
+.price-legal {
+    border-left: 4px solid var(--gold);
+    background: white;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 16px 0;
+}
+
+.price-section.alt .price-legal {
+    background: white;
+}
+
+.include-list,
+.steps-list {
+    padding-left: 1.25rem;
+    max-width: 760px;
+}
+
+.include-list li,
+.steps-list li {
+    padding: 4px 0;
+}
+
+.callout {
+    background: var(--off-white);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-top: 32px;
+    max-width: 760px;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.footer-bottom p.price-fineprint {
+    font-size: 1rem;
+    color: var(--slate-light);
+    margin-bottom: 12px;
+}
+
+.nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* --- About photo --- */
+.about-photo {
+    width: 100%;
+    height: auto;
 }
 
 /* --- Accessibility --- */
