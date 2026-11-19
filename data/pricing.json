@@ -9,6 +9,9 @@
   ],
   "care": {"monthly": 75, "commitMonths": 12, "editMinutesPerMonth": 30, "rollover": false, "outageResponseBusinessDays": 1, "requestResponseBusinessDays": 3},
   "addOnRatePerHour": 100,
+  "careExisting": {"onboardingAssessment": 150, "monthly": 100, "commitMonths": 0, "assessmentCreditDays": 30},
+  "singleServices": {"emailHealthCheck": 125, "googleBusinessProfileCleanup": 150},
+  "notOffered": ["rescue"],
   "deposit": {"percent": 50, "refundableUntilWorkStarts": true},
   "thirdParty": {"workspacePerUserMonthly": "about $7 to $8.40", "domainComYearly": "about $11"},
   "contactEmail": "hello@restoreddigital.com"
