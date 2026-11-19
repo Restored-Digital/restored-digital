@@ -296,7 +296,6 @@ const html = `<!doctype html>
             <ul class="footer-list">
               <li>Setup</li>
               <li>Monthly care</li>
-              <li>Rescue</li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-4 mb-4">
