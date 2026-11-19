@@ -101,6 +101,20 @@ h1, h2, h3, h4, h5 {
     color: var(--navy);
 }
 
+.hero-pointer {
+    margin: 28px 0 0 0;
+    font-size: 1rem;
+}
+
+.hero-pointer a {
+    color: var(--slate-light);
+    text-decoration: underline;
+}
+
+.hero-pointer a:hover {
+    color: var(--gold-hover);
+}
+
 /* --- Problem --- */
 
 #problem {
@@ -161,13 +175,21 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-card {
+    position: relative;
     background: var(--off-white);
     border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
     border-radius: 8px;
-    padding: 36px 28px;
+    padding: 32px 26px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 6px 18px rgba(26, 39, 68, 0.12);
+    transform: translateY(-2px);
 }
 
 .service-card h3 {
@@ -203,8 +225,8 @@ h1, h2, h3, h4, h5 {
 .service-list {
     list-style: none;
     padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
+    margin: 0 0 20px 0;
+    font-size: 1rem;
     color: var(--gray);
     margin-top: 0;
 }
@@ -216,6 +238,61 @@ h1, h2, h3, h4, h5 {
 
 .service-list li:last-child {
     border-bottom: none;
+}
+
+.service-card .service-lead {
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+/* The whole card is the link: the overlay covers the card, one link per card. */
+.service-card-link {
+    margin-top: auto;
+    color: var(--blue);
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.service-card-link::after {
+    content: "\00a0\2192";
+}
+
+.service-card-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+}
+
+.service-card-link:hover {
+    text-decoration: underline;
+}
+
+.service-card-link:focus-visible {
+    outline: none;
+}
+
+.service-card-link:focus-visible::before {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+    .service-card {
+        padding: 24px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card {
+        transition: none;
+    }
+
+    .service-card:hover {
+        transform: none;
+    }
 }
 /* --- About --- */
 #about {
