@@ -185,9 +185,31 @@ const html = `<!doctype html>
         </div>
       </section>
 
-      <section class="price-section" id="packages">
+      <section class="price-section" id="care">
         <div class="container">
-          <h2>Choose your package</h2>
+          <h2>Care: ${usd(p.care.monthly)}/month</h2>
+          <p>Someone keeping an eye on things, so you don't have to.</p>
+          <ul class="include-list">
+            <li><strong>Monitoring</strong>, so we notice if your site goes down.</li>
+            <li><strong>Secure connection and settings</strong> kept in good order.</li>
+            <li><strong>Up to ${p.care.editMinutesPerMonth} minutes of updates each month</strong> (text, hours, photos). Unused time doesn't roll over; extra time is ${usd(p.addOnRatePerHour)}/hour, in 15-minute increments.</li>
+            <li><strong>A quarterly check-in</strong> on your Google listing, your reviews, and whether your business details match across the web.</li>
+            <li><strong>Reminders</strong> before your web address or other accounts need renewing.</li>
+          </ul>
+          <p>We respond to a reported outage within ${days(p.care.outageResponseBusinessDays)} and to other requests within ${days(p.care.requestResponseBusinessDays)}. A response means we've looked into it and told you the next step; some fixes take longer.</p>
+          <p class="price-legal">Cancel any time by email. Care ends at the end of the month you've paid for, with no refund for a partial month. On the ${p.care.commitMonths}-month plan, the early-exit fee above applies.</p>
+          <p>See the 12-month plan below for how the early-exit fee works.</p>
+          <p>We give at least ${p.care.priceChangeNoticeDays} days' notice before changing the Care price, and it never changes during a ${p.care.commitMonths}-month plan.</p>
+          <div class="callout">
+            <strong>You own everything, from day one.</strong> Your web address, website, email, and Google listing are set up in your name, using your email, and billed to you. You set your own passwords. We never lock you out or take your site down, for any reason.
+          </div>
+        </div>
+      </section>
+
+      <section class="price-section alt" id="getting-started">
+        <div class="container">
+          <h2>Getting started: no website yet?</h2>
+          <p>If you don't have a website, we build one first and set up everything Care looks after. Pick a package, then choose how to pay for it.</p>
           ${packagesTable}
 
           <h2 class="mt-5">Every package includes</h2>
@@ -205,18 +227,10 @@ const html = `<!doctype html>
             <li><strong>Your ownership binder:</strong> a written record of every account you own and how to get in.</li>
           </ul>
 
-          <div class="callout">
-            <strong>You own everything, from day one.</strong> Your web address, website, email, and Google listing are set up in your name, using your email, and billed to you. You set your own passwords. We never lock you out or take your site down, for any reason.
-          </div>
-        </div>
-      </section>
-
-      <section class="price-section alt" id="payment">
-        <div class="container">
-          <h2>Two ways to pay for setup</h2>
-          <p><strong>Option 1: Pay in full.</strong> Pay the package price above. Care (below) is optional.</p>
-          <p><strong>Option 2: Lower setup price with a ${p.care.commitMonths}-month Care plan.</strong> Pay a lower setup price when you keep Care for ${p.care.commitMonths} months in a row.</p>
+          <h2 class="mt-5">Two ways to start</h2>
+          <p><strong>Option 1 (Recommended): Start with a ${p.care.commitMonths}-month Care plan.</strong> Pay a lower setup price when you keep Care for ${p.care.commitMonths} months in a row.</p>
           ${commitTable}
+          <p><strong>Option 2: Pay in full.</strong> Pay the package price. Care is optional, and you can add it any time.</p>
 
           ${existingSite}
 
@@ -234,24 +248,7 @@ const html = `<!doctype html>
         </div>
       </section>
 
-      <section class="price-section" id="care">
-        <div class="container">
-          <h2>Care: ${usd(p.care.monthly)}/month</h2>
-          <p>Someone keeping an eye on things, so you don't have to.</p>
-          <ul class="include-list">
-            <li><strong>Monitoring</strong>, so we notice if your site goes down.</li>
-            <li><strong>Secure connection and settings</strong> kept in good order.</li>
-            <li><strong>Up to ${p.care.editMinutesPerMonth} minutes of updates each month</strong> (text, hours, photos). Unused time doesn't roll over; extra time is ${usd(p.addOnRatePerHour)}/hour, in 15-minute increments.</li>
-            <li><strong>A quarterly check-in</strong> on your Google listing, your reviews, and whether your business details match across the web.</li>
-            <li><strong>Reminders</strong> before your web address or other accounts need renewing.</li>
-          </ul>
-          <p>We respond to a reported outage within ${days(p.care.outageResponseBusinessDays)} and to other requests within ${days(p.care.requestResponseBusinessDays)}. A response means we've looked into it and told you the next step; some fixes take longer.</p>
-          <p class="price-legal">Cancel any time by email. Care ends at the end of the month you've paid for, with no refund for a partial month. On the ${p.care.commitMonths}-month plan, the early-exit fee above applies.</p>
-          <p>We give at least ${p.care.priceChangeNoticeDays} days' notice before changing the Care price, and it never changes during a ${p.care.commitMonths}-month plan.</p>
-        </div>
-      </section>
-
-      <section class="price-section alt" id="extras">
+      <section class="price-section" id="extras">
         <div class="container">
           <h2>Costs you pay directly</h2>
           <p>These companies bill your own accounts directly. We do not pay or re-bill them. Their prices are set by them and may change.</p>
@@ -265,9 +262,9 @@ const html = `<!doctype html>
         </div>
       </section>
 
-      <section class="price-section" id="cta">
+      <section class="price-section alt" id="cta">
         <div class="container text-center">
-          <h2>Ready to get online?</h2>
+          <h2>Ready to stop worrying about your website?</h2>
           <p>Tell us about your business and we'll recommend the right package.</p>
           <a href="mailto:${p.contactEmail}" class="btn btn-gold">Email us</a>
         </div>
