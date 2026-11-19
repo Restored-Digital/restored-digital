@@ -36,13 +36,12 @@ const packagesTable = `
       ${row("Your website", (t) => t.summary)}
       ${row("Rounds of changes", (t) => t.revisionRounds)}
       ${row("Ready in", (t) => `${days(t.deliveryBusinessDays)}*`)}
-      ${row("Setup and handover", (t) => (t.inPerson ? "In person at your business" : "Remote"))}
+      ${row("Setup and handover", (t) => (t.inPerson ? "In person or remote, your choice" : `Remote (in person available at ${usd(p.addOnRatePerHour)}/hour)`))}
     </tbody>
   </table>
 </div>
 <p class="price-note">*Counted from when your deposit clears and we have all of your content (business details, hours, photos, and anything else your package needs).</p>
-<p class="price-note">Prices ${p.salesTaxNote}.</p>
-<p class="price-note">Prices may change; your price is the one in your signed agreement.</p>`;
+<p class="price-note">Prices ${p.salesTaxNote}.</p>`;
 
 const commitTable = `
 <div class="table-responsive">
@@ -58,7 +57,7 @@ const commitTable = `
   </table>
 </div>
 <p class="price-legal">If you cancel Care before the ${p.care.commitMonths} months are up, an early-exit fee applies: your setup discount × the full months remaining ÷ ${p.care.commitMonths}. It is never more than your setup discount, and it goes down every month. After ${p.care.commitMonths} months, Care continues month to month until you cancel, and we remind you 30 days before the ${p.care.commitMonths} months end.</p>
-<p class="price-note">Prices may change; your price is the one in your signed agreement.</p>`;
+<p class="price-note">No early-exit fee applies if we end Care or stop offering it.</p>`;
 
 // Care for existing sites has no commitment term; the copy says "No 12-month commitment".
 if (p.careExisting.commitMonths !== 0) {
@@ -70,14 +69,15 @@ const existingSite = `
 <p>If your site is simple enough for us to look after, we'll care for it as it is. If it isn't, we'll tell you, and recommend a new site from our packages instead.</p>
 <p><strong>Step 1, Onboarding Assessment: ${usd(p.careExisting.onboardingAssessment)}.</strong> We check who owns each account, what your site is built with, and the condition of your domain, email, secure connection, and Google listing. You get a written record of what we found (your Baseline) and our recommendation. If you choose a new site from our packages within ${p.careExisting.assessmentCreditDays} days, we credit the ${usd(p.careExisting.onboardingAssessment)} toward it, on either payment option.</p>
 <p><strong>Step 2, Care: ${usd(p.careExisting.monthly)}/month.</strong> The same Care described above, for a site we didn't build. No ${p.care.commitMonths}-month commitment and no early-exit fee.</p>
-<p><strong>Which sites qualify:</strong> you own the website files and hosting account; the site can run through your own Cloudflare account; it doesn't need ongoing software, theme, or plugin updates; it's hosted with a provider we agree to work with; and it shows no sign of being hacked. Sites built on site builders (such as Wix or Squarespace) or WordPress don't qualify; for those we recommend a new site.</p>
+<p><strong>Which sites qualify:</strong> you own the website files and hosting account; the site can run through your own Cloudflare account; it doesn't need ongoing software, theme, or plugin updates; it's hosted with a provider we agree to work with; and it shows no sign of being hacked or infected. Sites built on site builders (such as Wix, Squarespace, or similar), WordPress, or other systems that need ongoing software updates don't qualify; for those we recommend a new site.</p>
+<p>Care for an existing site doesn't include rebuilding or redesigning it, or software, theme, or plugin updates.</p>
 <p class="price-legal">Care keeps your site and settings working from your Baseline onward. It does not cover fixing problems that existed before Care started, unless we quote and agree to fix them.</p>
 <p class="price-legal">If your website is hosted with another company, that company runs your hosting, not us. We do not manage, control, or answer for your hosting company's service, outages, changes, or billing. Take hosting problems up with your hosting company directly.</p>`;
 
 const quickFixes = `
 <h2 class="mt-5" id="quick-fixes">Quick fixes</h2>
 <p><strong>Email Health Check: ${usd(p.singleServices.emailHealthCheck)}.</strong> We check and fix the settings that help your business email reach inboxes instead of spam folders, then send test messages to confirm delivery.</p>
-<p><strong>Google Business Profile Cleanup: ${usd(p.singleServices.googleBusinessProfileCleanup)}.</strong> We claim or recover your Google listing, correct your name, address, phone, hours, and categories, and connect it to your website. Google decides verification and how listings appear; we don't control or promise either.</p>
+<p><strong>Google Business Profile Cleanup: ${usd(p.singleServices.googleBusinessProfileCleanup)}.</strong> We claim or recover your Google listing, correct your name, address, phone, hours, and categories, and connect it to your website if you have one. Google decides verification and how listings appear; we don't control or promise either.</p>
 <p>Paid in full when you sign. Prices ${p.salesTaxNote}.</p>`;
 
 const html = `<!doctype html>
@@ -177,7 +177,7 @@ const html = `<!doctype html>
             <div class="col-lg-8">
               <h1>Simple, fixed pricing</h1>
               <p class="hero-sub">
-                Everything your business needs to get online: a website, business email at your own address, and your Google Maps listing. One clear price for each package, and you own all of it from day one.
+                Everything your business needs to get online: a website, business email at your own address, and your Google Maps listing. Clear, fixed prices for each package, and you own all of it from day one.
               </p>
               <a href="mailto:${p.contactEmail}" class="btn btn-gold">Get started</a>
             </div>
@@ -241,26 +241,27 @@ const html = `<!doctype html>
           <ul class="include-list">
             <li><strong>Monitoring</strong>, so we notice if your site goes down.</li>
             <li><strong>Secure connection and settings</strong> kept in good order.</li>
-            <li><strong>Up to ${p.care.editMinutesPerMonth} minutes of updates each month</strong> (text, hours, photos). Unused time doesn't roll over; extra time is ${usd(p.addOnRatePerHour)}/hour.</li>
+            <li><strong>Up to ${p.care.editMinutesPerMonth} minutes of updates each month</strong> (text, hours, photos). Unused time doesn't roll over; extra time is ${usd(p.addOnRatePerHour)}/hour, in 15-minute increments.</li>
             <li><strong>A quarterly check-in</strong> on your Google listing, your reviews, and whether your business details match across the web.</li>
             <li><strong>Reminders</strong> before your web address or other accounts need renewing.</li>
           </ul>
-          <p>We respond to a reported outage within ${days(p.care.outageResponseBusinessDays)} and to other requests within ${days(p.care.requestResponseBusinessDays)}.</p>
+          <p>We respond to a reported outage within ${days(p.care.outageResponseBusinessDays)} and to other requests within ${days(p.care.requestResponseBusinessDays)}. A response means we've looked into it and told you the next step; some fixes take longer.</p>
           <p class="price-legal">Cancel any time by email. Care ends at the end of the month you've paid for, with no refund for a partial month. On the ${p.care.commitMonths}-month plan, the early-exit fee above applies.</p>
+          <p>We give at least ${p.care.priceChangeNoticeDays} days' notice before changing the Care price, and it never changes during a ${p.care.commitMonths}-month plan.</p>
         </div>
       </section>
 
       <section class="price-section alt" id="extras">
         <div class="container">
           <h2>Costs you pay directly</h2>
-          <p>These companies bill your own accounts directly. We don't mark them up or re-bill them, and their prices are set by them.</p>
+          <p>These companies bill your own accounts directly. We do not pay or re-bill them. Their prices are set by them and may change.</p>
           <ul class="include-list">
             <li><strong>Business email (Google Workspace):</strong> ${p.thirdParty.workspacePerUserMonthly} per person per month, depending on the billing plan you choose with Google.</li>
             <li><strong>Your web address (.com):</strong> ${p.thirdParty.domainComYearly} per year through Cloudflare.</li>
           </ul>
 
           <h2 class="mt-5">Not included</h2>
-          <p>Logo design, ongoing search engine optimization, advertising management, online stores or payment features, social media posting, booking or scheduling tools, and cleanup of hacked sites. Extra pages, extra rounds of changes, and extra writing are available at ${usd(p.addOnRatePerHour)}/hour, only with your approval first.</p>
+          <p>Logo design, ongoing search engine optimization, advertising management, online stores or payment features, social media posting, booking or scheduling tools, and cleanup of hacked or infected sites. Extra pages, extra rounds of changes, and extra writing are available at ${usd(p.addOnRatePerHour)}/hour, in 15-minute increments, only with your approval first.</p>
         </div>
       </section>
 
@@ -308,7 +309,7 @@ const html = `<!doctype html>
         </div>
         <div class="row footer-bottom">
           <div class="col text-center">
-            <p class="price-fineprint">All prices in U.S. dollars, ${p.salesTaxNote}. Prices may change; your price is the one in your signed agreement. We don't promise any search ranking, website traffic, leads, or sales. Restored Digital is a trade name of Acutis Ventures LLC.</p>
+            <p class="price-fineprint">All prices in U.S. dollars, ${p.salesTaxNote}. Prices may change; your price is the one in your signed agreement. We don't promise any search ranking, website traffic, leads, calls, sales, or reviews. Restored Digital is a trade name of Acutis Ventures LLC.</p>
             <p>&copy; 2026 Acutis Ventures LLC. All rights reserved.</p>
             <p class="footer-disclaimer">
               Restored Digital is a web services company and does not provide accounting, tax, or financial advisory services.

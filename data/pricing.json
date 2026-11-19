@@ -7,7 +7,7 @@
     {"id": "standard", "name": "Standard", "price": 900, "commitPrice": 649, "discount": 251, "revisionRounds": 2, "deliveryBusinessDays": 10, "inPerson": true, "pages": "3 to 5", "summary": "3 to 5 pages (for example Home, About, Services, Contact)"},
     {"id": "established", "name": "Established", "price": 1350, "commitPrice": 899, "discount": 451, "revisionRounds": 2, "deliveryBusinessDays": 15, "inPerson": true, "pages": "5 to 8", "copywriting": true, "summary": "5 to 8 pages, with the words written for you for each page"}
   ],
-  "care": {"monthly": 75, "commitMonths": 12, "editMinutesPerMonth": 30, "rollover": false, "outageResponseBusinessDays": 1, "requestResponseBusinessDays": 3},
+  "care": {"monthly": 75, "commitMonths": 12, "editMinutesPerMonth": 30, "rollover": false, "outageResponseBusinessDays": 1, "requestResponseBusinessDays": 3, "priceChangeNoticeDays": 30},
   "addOnRatePerHour": 100,
   "careExisting": {"onboardingAssessment": 150, "monthly": 100, "commitMonths": 0, "assessmentCreditDays": 30},
   "singleServices": {"emailHealthCheck": 125, "googleBusinessProfileCleanup": 150},
